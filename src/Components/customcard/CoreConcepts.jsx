@@ -1,18 +1,3 @@
-// import React from "react";
-
-// const CoreConcepts = ({ title = "", description = "" }) => {
-//   return (
-   
-//       <li className="text-white">
-//         <img src="" alt="" />
-//         <h3>{title}</h3>
-//         <p>{description}</p>
-//       </li>
-//   );
-// };
-
-// export default CoreConcepts;
-
 
 
 import React from 'react'
