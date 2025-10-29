@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Components/customcard/Header'
 import CoreConcepts from './Components/customcard/CoreConcepts';
 import { core_concept } from './Components/Constant/coreData';
+import TabButton from './Components/Buttons/TabButton';
 
 
 
@@ -35,6 +36,12 @@ const App = () => {
             <CoreConcepts {...core_concept[2]} />
             <CoreConcepts {...core_concept[3]} /> */}
           </ul>
+        </section>
+        <section className='text-white '>
+          <h2 className='text-lg font-semibold text-purple-400'>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+          </menu>
         </section>
       </main>
     </div>
