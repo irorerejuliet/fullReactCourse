@@ -11,7 +11,7 @@ import TabButton from './Components/Buttons/TabButton';
 
 const App = () => { 
   return (
-    <div className="bg-[#140524] w-full h-screen">
+    <div className="bg-[#140524] w-full min-h-screen">
       <Header />
       <main className="max-w-[1440px] m-auto">
         <section className="bg-slate-950 rounded-lg py-10">
@@ -20,10 +20,10 @@ const App = () => {
           </h2>
           {/* what is the best thing to do on the this code, is it to map or just use spread operator */}
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-            {core_concept.map(({id, image, title, description}) => (
-              <div key={id} className='text-white w-[200px] text-center'>
-                <img src={image} alt="" />
-                <h3 className='text-lg font-bold pb-4'>{title}</h3>
+            {core_concept.map(({ id, image, title, description }) => (
+              <div key={id} className="text-white w-[200px] text-center">
+                <img src={image} alt="watches" className='py-5 transform hover:scale-110 transition duration-300'/>
+                <h3 className="text-lg font-bold pb-4">{title}</h3>
                 <p>{description}</p>
               </div>
             ))}
@@ -37,10 +37,13 @@ const App = () => {
             <CoreConcepts {...core_concept[3]} /> */}
           </ul>
         </section>
-        <section className='text-white '>
-          <h2 className='text-lg font-semibold text-purple-400'>Examples</h2>
-          <menu>
+        <section className="text-white pt-24">
+          <h2 className="text-lg font-semibold text-purple-400">Examples</h2>
+          <menu className="flex gap-20 items-center text-lg font-semibol text-purple-200 py-5">
             <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
           </menu>
         </section>
       </main>

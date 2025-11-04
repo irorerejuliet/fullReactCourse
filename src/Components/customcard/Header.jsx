@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <div className='text-center py-24'>
-      <img src="/images/juliet.jpg" alt="" className='w-[80px] text-center m-auto rounded-full '/>
+      <img src="/images/HeroImage.png" alt="" className='w-[300px] text-center m-auto rounded-full transform transition hover:scale-150'/>
       <h2 className='text-3xl font-bold text-green-500 py-3'>React Essentials</h2>
       <p className='text-white pt-6 text-xl font-bold'>
         {descriptions} React Concepts you will neeed for almost any app you are going to build!
