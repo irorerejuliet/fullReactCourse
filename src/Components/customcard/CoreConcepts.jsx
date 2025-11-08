@@ -4,7 +4,7 @@ import React from 'react'
 
 const CoreConcepts = ({image, title, description}) => {
   return (
-    <div className='text-white'>
+    <div className='text-white bg-pink-600 '>
       <li>
       <img src={image} alt="star" className='w-30'/>
       <h2 className='ml-16'>{title} </h2>
