@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './Components/customcard/Header'
 import { core_concept } from './Components/Constant/coreData';
 import TabButton from './Components/Buttons/TabButton';
+import { examples } from './Components/Constant/data';
 
 
 
@@ -9,7 +10,7 @@ import TabButton from './Components/Buttons/TabButton';
 
 
 const App = () => { 
-  const  [selectedTopic, setSelectedTopic] = useState('Please click the button')
+  const  [selectedTopic, setSelectedTopic] = useState('components')
 
 
   function handleSelect(SeclectedButton) {
@@ -51,6 +52,14 @@ const App = () => {
             <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
           </menu>
           {selectedTopic}
+
+          <div>
+            <h3>{examples[selectedTopic].title}</h3>
+            <p>{examples[selectedTopic].description}</p>
+            <pre>
+              <code>{examples[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
