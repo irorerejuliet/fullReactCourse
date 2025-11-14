@@ -25,7 +25,7 @@ const App = () => {
    tabContent = (
     <div>
       <h3 className="text-lg font-semibold">{data[selectedTopic].title}</h3>
-      <p className="text-base font-normal py-3">
+      <p className="text-base font-bold py-3">
         {data[selectedTopic].description}
       </p>
       <pre className="text-xs font-medium">
