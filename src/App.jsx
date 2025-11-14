@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from './Components/customcard/Header'
 import { core_concept } from './Components/Constant/coreData';
 import TabButton from './Components/Buttons/TabButton';
-import { examples } from './Components/Constant/data';
+import { data } from './Components/Constant/data';
 
 
 
@@ -17,6 +17,22 @@ const App = () => {
     // selected button should be a string 'component', jsx etc
     setSelectedTopic(SeclectedButton)
     console.log(selectedTopic);
+  }
+
+  let tabContent = <p>Please select the topic</p>;
+
+  if (selectedTopic){
+   tabContent = (
+    <div>
+      <h3 className="text-lg font-semibold">{data[selectedTopic].title}</h3>
+      <p className="text-base font-normal py-3">
+        {data[selectedTopic].description}
+      </p>
+      <pre className="text-xs font-medium">
+        <code>{data[selectedTopic].code}</code>
+      </pre>
+    </div>
+   )
   }
   return (
     <div className="bg-[#140524] w-full min-h-screen">
@@ -44,21 +60,15 @@ const App = () => {
         <section className="text-white pt-24">
           <h2 className="text-lg font-semibold text-purple-400">Examples</h2>
           <menu className="flex gap-20 items-center text-lg font-semibol text-purple-200 py-5">
-            <TabButton onSelect={() => handleSelect("Components")}>
+            <TabButton onSelect={() => handleSelect("components")}>
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("State")}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
-
           <div>
-            <h3>{examples[selectedTopic].title}</h3>
-            <p>{examples[selectedTopic].description}</p>
-            <pre>
-              <code>{examples[selectedTopic].code}</code>
-            </pre>
+          {tabContent}
           </div>
         </section>
       </main>
